@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 22.900 ns
+From           : state[1]
+To             : right_out[2]
+From Clock     : clk_input
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk_input'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 50.51 MHz ( period = 19.800 ns )
+From           : lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1]
+To             : state[0]
+From Clock     : clk_input
+To Clock       : clk_input
+Failed Paths   : 0
+
+Type           : Clock Setup: 'rvs_input'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 125.00 MHz ( period = 8.000 ns )
+From           : reverse_state
+To             : reverse_state
+From Clock     : rvs_input
+To Clock       : rvs_input
+Failed Paths   : 0
+
+Type           : Clock Setup: 'spd_input'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 125.00 MHz ( period = 8.000 ns )
+From           : delay[4]
+To             : delay[4]
+From Clock     : spd_input
+To Clock       : spd_input
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+
