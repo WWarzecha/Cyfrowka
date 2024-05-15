@@ -1,0 +1,301 @@
+Classic Timing Analyzer report for fpga
+Tue May 14 10:24:15 2024
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clk_input'
+  7. Clock Setup: 'spd_input'
+  8. Clock Setup: 'rvs_input'
+  9. tco
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                                        ;
++------------------------------+-------+---------------+------------------------------------------------+--------------------------------------------------------------------------------+---------------+------------+-----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                                    ; From                                                                           ; To            ; From Clock ; To Clock  ; Failed Paths ;
++------------------------------+-------+---------------+------------------------------------------------+--------------------------------------------------------------------------------+---------------+------------+-----------+--------------+
+; Worst-case tco               ; N/A   ; None          ; 22.900 ns                                      ; state[1]                                                                       ; right_out[2]  ; clk_input  ; --        ; 0            ;
+; Clock Setup: 'clk_input'     ; N/A   ; None          ; 50.51 MHz ( period = 19.800 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; state[0]      ; clk_input  ; clk_input ; 0            ;
+; Clock Setup: 'rvs_input'     ; N/A   ; None          ; Restricted to 125.00 MHz ( period = 8.000 ns ) ; reverse_state                                                                  ; reverse_state ; rvs_input  ; rvs_input ; 0            ;
+; Clock Setup: 'spd_input'     ; N/A   ; None          ; Restricted to 125.00 MHz ( period = 8.000 ns ) ; delay[4]                                                                       ; delay[4]      ; spd_input  ; spd_input ; 0            ;
+; Total number of failed paths ;       ;               ;                                                ;                                                                                ;               ;            ;           ; 0            ;
++------------------------------+-------+---------------+------------------------------------------------+--------------------------------------------------------------------------------+---------------+------------+-----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EPF10K70RC240-4    ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                   ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                   ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk_input       ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; spd_input       ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; rvs_input       ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk_input'                                                                                                                                                                                                                                                                                                              ;
++-------+------------------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+------------+-----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From                                                                           ; To                                                                             ; From Clock ; To Clock  ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+------------+-----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 50.51 MHz ( period = 19.800 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3] ; state[2]                                                                       ; clk_input  ; clk_input ; None                        ; None                      ; 15.800 ns               ;
+; N/A   ; 50.51 MHz ( period = 19.800 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; state[2]                                                                       ; clk_input  ; clk_input ; None                        ; None                      ; 15.800 ns               ;
+; N/A   ; 50.51 MHz ( period = 19.800 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3] ; state[1]                                                                       ; clk_input  ; clk_input ; None                        ; None                      ; 15.800 ns               ;
+; N/A   ; 50.51 MHz ( period = 19.800 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; state[1]                                                                       ; clk_input  ; clk_input ; None                        ; None                      ; 15.800 ns               ;
+; N/A   ; 50.51 MHz ( period = 19.800 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3] ; state[0]                                                                       ; clk_input  ; clk_input ; None                        ; None                      ; 15.800 ns               ;
+; N/A   ; 50.51 MHz ( period = 19.800 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; state[0]                                                                       ; clk_input  ; clk_input ; None                        ; None                      ; 15.800 ns               ;
+; N/A   ; 51.28 MHz ( period = 19.500 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[2] ; state[2]                                                                       ; clk_input  ; clk_input ; None                        ; None                      ; 15.500 ns               ;
+; N/A   ; 51.28 MHz ( period = 19.500 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[2] ; state[1]                                                                       ; clk_input  ; clk_input ; None                        ; None                      ; 15.500 ns               ;
+; N/A   ; 51.28 MHz ( period = 19.500 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[2] ; state[0]                                                                       ; clk_input  ; clk_input ; None                        ; None                      ; 15.500 ns               ;
+; N/A   ; 59.17 MHz ( period = 16.900 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4] ; state[2]                                                                       ; clk_input  ; clk_input ; None                        ; None                      ; 12.900 ns               ;
+; N/A   ; 59.17 MHz ( period = 16.900 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4] ; state[1]                                                                       ; clk_input  ; clk_input ; None                        ; None                      ; 12.900 ns               ;
+; N/A   ; 59.17 MHz ( period = 16.900 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4] ; state[0]                                                                       ; clk_input  ; clk_input ; None                        ; None                      ; 12.900 ns               ;
+; N/A   ; 64.52 MHz ( period = 15.500 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3] ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[2] ; clk_input  ; clk_input ; None                        ; None                      ; 11.500 ns               ;
+; N/A   ; 64.52 MHz ( period = 15.500 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[2] ; clk_input  ; clk_input ; None                        ; None                      ; 11.500 ns               ;
+; N/A   ; 64.52 MHz ( period = 15.500 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3] ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3] ; clk_input  ; clk_input ; None                        ; None                      ; 11.500 ns               ;
+; N/A   ; 64.52 MHz ( period = 15.500 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3] ; clk_input  ; clk_input ; None                        ; None                      ; 11.500 ns               ;
+; N/A   ; 64.52 MHz ( period = 15.500 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3] ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; clk_input  ; clk_input ; None                        ; None                      ; 11.500 ns               ;
+; N/A   ; 64.52 MHz ( period = 15.500 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; clk_input  ; clk_input ; None                        ; None                      ; 11.500 ns               ;
+; N/A   ; 64.52 MHz ( period = 15.500 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3] ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[0] ; clk_input  ; clk_input ; None                        ; None                      ; 11.500 ns               ;
+; N/A   ; 64.52 MHz ( period = 15.500 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[0] ; clk_input  ; clk_input ; None                        ; None                      ; 11.500 ns               ;
+; N/A   ; 64.52 MHz ( period = 15.500 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3] ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4] ; clk_input  ; clk_input ; None                        ; None                      ; 11.500 ns               ;
+; N/A   ; 64.52 MHz ( period = 15.500 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4] ; clk_input  ; clk_input ; None                        ; None                      ; 11.500 ns               ;
+; N/A   ; 65.79 MHz ( period = 15.200 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[2] ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[2] ; clk_input  ; clk_input ; None                        ; None                      ; 11.200 ns               ;
+; N/A   ; 65.79 MHz ( period = 15.200 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[2] ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3] ; clk_input  ; clk_input ; None                        ; None                      ; 11.200 ns               ;
+; N/A   ; 65.79 MHz ( period = 15.200 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[2] ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; clk_input  ; clk_input ; None                        ; None                      ; 11.200 ns               ;
+; N/A   ; 65.79 MHz ( period = 15.200 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[2] ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[0] ; clk_input  ; clk_input ; None                        ; None                      ; 11.200 ns               ;
+; N/A   ; 65.79 MHz ( period = 15.200 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[2] ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4] ; clk_input  ; clk_input ; None                        ; None                      ; 11.200 ns               ;
+; N/A   ; 79.37 MHz ( period = 12.600 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4] ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[2] ; clk_input  ; clk_input ; None                        ; None                      ; 8.600 ns                ;
+; N/A   ; 79.37 MHz ( period = 12.600 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4] ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3] ; clk_input  ; clk_input ; None                        ; None                      ; 8.600 ns                ;
+; N/A   ; 79.37 MHz ( period = 12.600 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4] ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; clk_input  ; clk_input ; None                        ; None                      ; 8.600 ns                ;
+; N/A   ; 79.37 MHz ( period = 12.600 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4] ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[0] ; clk_input  ; clk_input ; None                        ; None                      ; 8.600 ns                ;
+; N/A   ; 79.37 MHz ( period = 12.600 ns )               ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4] ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4] ; clk_input  ; clk_input ; None                        ; None                      ; 8.600 ns                ;
+; N/A   ; 104.17 MHz ( period = 9.600 ns )               ; state[0]                                                                       ; state[2]                                                                       ; clk_input  ; clk_input ; None                        ; None                      ; 5.600 ns                ;
+; N/A   ; 106.38 MHz ( period = 9.400 ns )               ; state[2]                                                                       ; state[2]                                                                       ; clk_input  ; clk_input ; None                        ; None                      ; 5.400 ns                ;
+; N/A   ; 106.38 MHz ( period = 9.400 ns )               ; state[1]                                                                       ; state[1]                                                                       ; clk_input  ; clk_input ; None                        ; None                      ; 5.400 ns                ;
+; N/A   ; 107.53 MHz ( period = 9.300 ns )               ; state[1]                                                                       ; state[2]                                                                       ; clk_input  ; clk_input ; None                        ; None                      ; 5.300 ns                ;
+; N/A   ; 107.53 MHz ( period = 9.300 ns )               ; state[0]                                                                       ; state[1]                                                                       ; clk_input  ; clk_input ; None                        ; None                      ; 5.300 ns                ;
+; N/A   ; Restricted to 125.00 MHz ( period = 8.000 ns ) ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[0] ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4] ; clk_input  ; clk_input ; None                        ; None                      ; 2.900 ns                ;
+; N/A   ; Restricted to 125.00 MHz ( period = 8.000 ns ) ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[0] ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3] ; clk_input  ; clk_input ; None                        ; None                      ; 2.600 ns                ;
+; N/A   ; Restricted to 125.00 MHz ( period = 8.000 ns ) ; state[0]                                                                       ; state[0]                                                                       ; clk_input  ; clk_input ; None                        ; None                      ; 2.500 ns                ;
+; N/A   ; Restricted to 125.00 MHz ( period = 8.000 ns ) ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[0] ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[2] ; clk_input  ; clk_input ; None                        ; None                      ; 2.300 ns                ;
+; N/A   ; Restricted to 125.00 MHz ( period = 8.000 ns ) ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[0] ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; clk_input  ; clk_input ; None                        ; None                      ; 2.000 ns                ;
+; N/A   ; Restricted to 125.00 MHz ( period = 8.000 ns ) ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[0] ; lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[0] ; clk_input  ; clk_input ; None                        ; None                      ; 2.000 ns                ;
++-------+------------------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+------------+-----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'spd_input'                                                                                                                                                                  ;
++-------+------------------------------------------------+----------+----------+------------+-----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From     ; To       ; From Clock ; To Clock  ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+----------+----------+------------+-----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; Restricted to 125.00 MHz ( period = 8.000 ns ) ; delay[4] ; delay[4] ; spd_input  ; spd_input ; None                        ; None                      ; 2.200 ns                ;
++-------+------------------------------------------------+----------+----------+------------+-----------+-----------------------------+---------------------------+-------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'rvs_input'                                                                                                                                                                            ;
++-------+------------------------------------------------+---------------+---------------+------------+-----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From          ; To            ; From Clock ; To Clock  ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+---------------+---------------+------------+-----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; Restricted to 125.00 MHz ( period = 8.000 ns ) ; reverse_state ; reverse_state ; rvs_input  ; rvs_input ; None                        ; None                      ; 2.200 ns                ;
++-------+------------------------------------------------+---------------+---------------+------------+-----------+-----------------------------+---------------------------+-------------------------+
+
+
++--------------------------------------------------------------------------+
+; tco                                                                      ;
++-------+--------------+------------+----------+--------------+------------+
+; Slack ; Required tco ; Actual tco ; From     ; To           ; From Clock ;
++-------+--------------+------------+----------+--------------+------------+
+; N/A   ; None         ; 22.900 ns  ; state[1] ; right_out[2] ; clk_input  ;
+; N/A   ; None         ; 22.700 ns  ; state[2] ; right_out[6] ; clk_input  ;
+; N/A   ; None         ; 22.700 ns  ; state[0] ; right_out[2] ; clk_input  ;
+; N/A   ; None         ; 22.600 ns  ; state[2] ; right_out[2] ; clk_input  ;
+; N/A   ; None         ; 22.600 ns  ; state[2] ; left_out[5]  ; clk_input  ;
+; N/A   ; None         ; 22.500 ns  ; state[0] ; right_out[6] ; clk_input  ;
+; N/A   ; None         ; 22.500 ns  ; state[2] ; left_out[6]  ; clk_input  ;
+; N/A   ; None         ; 22.400 ns  ; state[1] ; right_out[6] ; clk_input  ;
+; N/A   ; None         ; 22.400 ns  ; state[1] ; left_out[3]  ; clk_input  ;
+; N/A   ; None         ; 22.300 ns  ; state[1] ; left_out[5]  ; clk_input  ;
+; N/A   ; None         ; 22.300 ns  ; state[0] ; left_out[5]  ; clk_input  ;
+; N/A   ; None         ; 22.200 ns  ; state[1] ; right_out[3] ; clk_input  ;
+; N/A   ; None         ; 22.200 ns  ; state[1] ; right_out[1] ; clk_input  ;
+; N/A   ; None         ; 22.200 ns  ; state[1] ; left_out[6]  ; clk_input  ;
+; N/A   ; None         ; 22.200 ns  ; state[0] ; left_out[3]  ; clk_input  ;
+; N/A   ; None         ; 22.100 ns  ; state[2] ; left_out[3]  ; clk_input  ;
+; N/A   ; None         ; 21.900 ns  ; state[2] ; right_out[3] ; clk_input  ;
+; N/A   ; None         ; 21.900 ns  ; state[2] ; right_out[1] ; clk_input  ;
+; N/A   ; None         ; 17.500 ns  ; state[1] ; left_out[4]  ; clk_input  ;
+; N/A   ; None         ; 17.200 ns  ; state[2] ; left_out[4]  ; clk_input  ;
++-------+--------------+------------+----------+--------------+------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.0 Build 132 02/25/2009 SJ Web Edition
+    Info: Processing started: Tue May 14 10:24:14 2024
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off fpga -c fpga
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk_input" is an undefined clock
+    Info: Assuming node "spd_input" is an undefined clock
+    Info: Assuming node "rvs_input" is an undefined clock
+Info: Clock "clk_input" has Internal fmax of 50.51 MHz between source register "lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3]" and destination register "state[2]" (period= 19.8 ns)
+    Info: + Longest register to register delay is 15.800 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC6_I28; Fanout = 5; REG Node = 'lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3]'
+        Info: 2: + IC(0.500 ns) + CELL(2.700 ns) = 3.200 ns; Loc. = LC2_I28; Fanout = 1; COMB Node = 'LessThan0~0'
+        Info: 3: + IC(0.500 ns) + CELL(2.400 ns) = 6.100 ns; Loc. = LC8_I28; Fanout = 1; COMB Node = 'LessThan0~1'
+        Info: 4: + IC(0.500 ns) + CELL(2.400 ns) = 9.000 ns; Loc. = LC1_I28; Fanout = 6; COMB Node = 'LessThan0~2'
+        Info: 5: + IC(2.700 ns) + CELL(2.400 ns) = 14.100 ns; Loc. = LC8_I27; Fanout = 3; COMB Node = 'state[2]~7'
+        Info: 6: + IC(0.500 ns) + CELL(1.200 ns) = 15.800 ns; Loc. = LC2_I27; Fanout = 9; REG Node = 'state[2]'
+        Info: Total cell delay = 11.100 ns ( 70.25 % )
+        Info: Total interconnect delay = 4.700 ns ( 29.75 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clk_input" to destination register is 7.000 ns
+            Info: 1: + IC(0.000 ns) + CELL(2.900 ns) = 2.900 ns; Loc. = PIN_91; Fanout = 8; CLK Node = 'clk_input'
+            Info: 2: + IC(4.100 ns) + CELL(0.000 ns) = 7.000 ns; Loc. = LC2_I27; Fanout = 9; REG Node = 'state[2]'
+            Info: Total cell delay = 2.900 ns ( 41.43 % )
+            Info: Total interconnect delay = 4.100 ns ( 58.57 % )
+        Info: - Longest clock path from clock "clk_input" to source register is 7.000 ns
+            Info: 1: + IC(0.000 ns) + CELL(2.900 ns) = 2.900 ns; Loc. = PIN_91; Fanout = 8; CLK Node = 'clk_input'
+            Info: 2: + IC(4.100 ns) + CELL(0.000 ns) = 7.000 ns; Loc. = LC6_I28; Fanout = 5; REG Node = 'lpm_counter:clock_counter_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3]'
+            Info: Total cell delay = 2.900 ns ( 41.43 % )
+            Info: Total interconnect delay = 4.100 ns ( 58.57 % )
+    Info: + Micro clock to output delay of source is 1.400 ns
+    Info: + Micro setup delay of destination is 2.600 ns
+Info: Clock "spd_input" Internal fmax is restricted to 125.0 MHz between source register "delay[4]" and destination register "delay[4]"
+    Info: fmax restricted to Clock High delay (4.0 ns) plus Clock Low delay (4.0 ns) : restricted to 8.0 ns. Expand message to see actual delay path.
+        Info: + Longest register to register delay is 2.200 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC1_I46; Fanout = 3; REG Node = 'delay[4]'
+            Info: 2: + IC(0.500 ns) + CELL(1.700 ns) = 2.200 ns; Loc. = LC1_I46; Fanout = 3; REG Node = 'delay[4]'
+            Info: Total cell delay = 1.700 ns ( 77.27 % )
+            Info: Total interconnect delay = 0.500 ns ( 22.73 % )
+        Info: - Smallest clock skew is 0.000 ns
+            Info: + Shortest clock path from clock "spd_input" to destination register is 7.000 ns
+                Info: 1: + IC(0.000 ns) + CELL(2.900 ns) = 2.900 ns; Loc. = PIN_211; Fanout = 1; CLK Node = 'spd_input'
+                Info: 2: + IC(4.100 ns) + CELL(0.000 ns) = 7.000 ns; Loc. = LC1_I46; Fanout = 3; REG Node = 'delay[4]'
+                Info: Total cell delay = 2.900 ns ( 41.43 % )
+                Info: Total interconnect delay = 4.100 ns ( 58.57 % )
+            Info: - Longest clock path from clock "spd_input" to source register is 7.000 ns
+                Info: 1: + IC(0.000 ns) + CELL(2.900 ns) = 2.900 ns; Loc. = PIN_211; Fanout = 1; CLK Node = 'spd_input'
+                Info: 2: + IC(4.100 ns) + CELL(0.000 ns) = 7.000 ns; Loc. = LC1_I46; Fanout = 3; REG Node = 'delay[4]'
+                Info: Total cell delay = 2.900 ns ( 41.43 % )
+                Info: Total interconnect delay = 4.100 ns ( 58.57 % )
+        Info: + Micro clock to output delay of source is 1.400 ns
+        Info: + Micro setup delay of destination is 2.600 ns
+Info: Clock "rvs_input" Internal fmax is restricted to 125.0 MHz between source register "reverse_state" and destination register "reverse_state"
+    Info: fmax restricted to Clock High delay (4.0 ns) plus Clock Low delay (4.0 ns) : restricted to 8.0 ns. Expand message to see actual delay path.
+        Info: + Longest register to register delay is 2.200 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC7_I27; Fanout = 4; REG Node = 'reverse_state'
+            Info: 2: + IC(0.500 ns) + CELL(1.700 ns) = 2.200 ns; Loc. = LC7_I27; Fanout = 4; REG Node = 'reverse_state'
+            Info: Total cell delay = 1.700 ns ( 77.27 % )
+            Info: Total interconnect delay = 0.500 ns ( 22.73 % )
+        Info: - Smallest clock skew is 0.000 ns
+            Info: + Shortest clock path from clock "rvs_input" to destination register is 7.000 ns
+                Info: 1: + IC(0.000 ns) + CELL(2.900 ns) = 2.900 ns; Loc. = PIN_212; Fanout = 1; CLK Node = 'rvs_input'
+                Info: 2: + IC(4.100 ns) + CELL(0.000 ns) = 7.000 ns; Loc. = LC7_I27; Fanout = 4; REG Node = 'reverse_state'
+                Info: Total cell delay = 2.900 ns ( 41.43 % )
+                Info: Total interconnect delay = 4.100 ns ( 58.57 % )
+            Info: - Longest clock path from clock "rvs_input" to source register is 7.000 ns
+                Info: 1: + IC(0.000 ns) + CELL(2.900 ns) = 2.900 ns; Loc. = PIN_212; Fanout = 1; CLK Node = 'rvs_input'
+                Info: 2: + IC(4.100 ns) + CELL(0.000 ns) = 7.000 ns; Loc. = LC7_I27; Fanout = 4; REG Node = 'reverse_state'
+                Info: Total cell delay = 2.900 ns ( 41.43 % )
+                Info: Total interconnect delay = 4.100 ns ( 58.57 % )
+        Info: + Micro clock to output delay of source is 1.400 ns
+        Info: + Micro setup delay of destination is 2.600 ns
+Info: tco from clock "clk_input" to destination pin "right_out[2]" through register "state[1]" is 22.900 ns
+    Info: + Longest clock path from clock "clk_input" to source register is 7.000 ns
+        Info: 1: + IC(0.000 ns) + CELL(2.900 ns) = 2.900 ns; Loc. = PIN_91; Fanout = 8; CLK Node = 'clk_input'
+        Info: 2: + IC(4.100 ns) + CELL(0.000 ns) = 7.000 ns; Loc. = LC1_I27; Fanout = 10; REG Node = 'state[1]'
+        Info: Total cell delay = 2.900 ns ( 41.43 % )
+        Info: Total interconnect delay = 4.100 ns ( 58.57 % )
+    Info: + Micro clock to output delay of source is 1.400 ns
+    Info: + Longest register to pin delay is 14.500 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC1_I27; Fanout = 10; REG Node = 'state[1]'
+        Info: 2: + IC(3.400 ns) + CELL(2.700 ns) = 6.100 ns; Loc. = LC2_I33; Fanout = 1; COMB Node = 'Mux6~0'
+        Info: 3: + IC(3.400 ns) + CELL(5.000 ns) = 14.500 ns; Loc. = PIN_221; Fanout = 0; PIN Node = 'right_out[2]'
+        Info: Total cell delay = 7.700 ns ( 53.10 % )
+        Info: Total interconnect delay = 6.800 ns ( 46.90 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 190 megabytes
+    Info: Processing ended: Tue May 14 10:24:15 2024
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+
